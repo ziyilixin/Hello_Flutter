@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class LayoutDemo extends StatelessWidget {
+class RowDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,3 +23,65 @@ class LayoutDemo extends StatelessWidget {
     );
   }
 }
+
+class LayoutDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.yellow,
+      width: 300,
+      height: 300,
+      alignment: Alignment(0, 0),
+      child: Container(
+        color: Colors.blue,
+        height: 150,
+        child: AspectRatio(
+            aspectRatio: 1/1,
+        ),
+      ),
+    );
+  }
+}
+
+class StackDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.yellow,
+      alignment: const Alignment(0, -1),
+      child: Stack(
+        children: [
+          Positioned(
+              child: Container(
+              color: Colors.white,
+              width: 200,
+              height: 200,
+              child: const Icon(Icons.add),
+            ),
+          ),
+          Positioned(
+            child: Container(
+              color: Colors.red,
+              width: 100,
+              height: 100,
+              child: const Icon(Icons.search_off),
+            ),
+            left: 0,
+          ),
+          Positioned(
+            child: Container(
+              color: Colors.blue,
+              width: 50,
+              height: 50,
+              child: const Icon(Icons.search),
+              margin: EdgeInsets.only(right: 20),
+            ),
+            right: 0,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
